@@ -21,7 +21,7 @@ end
 
 function M.play(m)
     job.stop(jobid)
-    jobid = job.start({ 'ffplay', m, '-autoexit', '-nodisp' })
+    jobid = job.start({ 'ffplay', m, '-autoexit', '-nodisp', '-volume', '30' })
 end
 
 function M.stop()
