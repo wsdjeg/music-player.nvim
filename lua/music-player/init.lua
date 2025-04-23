@@ -21,7 +21,7 @@ end
 
 function M.play(m)
     job.stop(jobid)
-    jobid = job.start({ 'ffplay', entry.value, '-autoexit', '-nodisp' })
+    jobid = job.start({ 'ffplay', m, '-autoexit', '-nodisp' })
 end
 
 function M.stop()
@@ -30,7 +30,7 @@ end
 
 function M.setup(opt)
     -- this can be a string or a list of string
-    musics_directory = opt.directory
+    musics_directory = opt.musics_directory
 end
 
 return M
