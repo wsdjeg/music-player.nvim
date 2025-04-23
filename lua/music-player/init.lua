@@ -21,7 +21,15 @@ end
 
 function M.play(m)
     job.stop(jobid)
-    jobid = job.start({ 'ffplay', m, '-autoexit', '-nodisp', '-volume', '30' })
+    jobid = job.start(
+        { 'ffplay', m, '-autoexit', '-nodisp', '-volume', '30' },
+        { on_exit = function(id, code, signal)
+            if code == 0 and signal == 0 then
+                local ms = M.get_musics()
+                M.play(ms[math.random(#ms)])
+            end
+        end }
+    )
 end
 
 function M.stop()
