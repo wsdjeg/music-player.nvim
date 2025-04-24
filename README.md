@@ -10,7 +10,11 @@
 ```lua
 require('plug').add({
     {
-        'D:/wsdjeg/music-player.nvim',
+        'wsdjeg/music-player.nvim',
+        depends = { { 'nvim-telescope/telescope.nvim' } },
+        enable = function()
+            return vim.fn.executable('mpv') == 1
+        end,
         config = function()
             require('music-player').setup({
                 musics_directory = 'D:\\musics',
