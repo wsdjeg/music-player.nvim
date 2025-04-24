@@ -23,9 +23,9 @@ end
 function M.play(m)
     logger.info(string.format('start playing %s', vim.fn.fnamemodify(m, ':t')))
     job.stop(jobid)
-    jobid = job.start({ 'ffplay', '-autoexit', '-nodisp', '-volume', '30', m }, {
+    jobid = job.start({ 'mpv', '--no-video', m }, {
         on_exit = function(id, code, signal)
-            logger.info(string.format('ffplay exit with code=%s, signal=%s', code, signal))
+            logger.info(string.format('mpv exit with code=%s, signal=%s', code, signal))
             if code == 0 and signal == 0 then
                 local ms = M.get_musics()
                 M.play(ms[math.random(#ms)])
