@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- mpv
+- ffmpeg
 - telescope.nvim
 
 ## Installation
