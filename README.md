@@ -13,7 +13,7 @@ require('plug').add({
         'wsdjeg/music-player.nvim',
         depends = { { 'nvim-telescope/telescope.nvim' } },
         enable = function()
-            return vim.fn.executable('mpv') == 1
+            return vim.fn.executable('ffplay') == 1
         end,
         config = function()
             require('music-player').setup({
