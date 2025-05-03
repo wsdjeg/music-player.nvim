@@ -8,11 +8,11 @@ local jobid
 
 function M.get_musics()
     if type(musics_directory) == 'string' then
-        return vim.fn.globpath(musics_directory, '*.mp3', 0, 1)
+        return vim.fn.globpath(musics_directory, '*.mp3', false, true)
     else
         local rst = {}
         for _, v in ipairs(musics_directory) do
-            for _, m in ipairs(vim.fn.globpath(v, '*.mp3', 0, 1)) do
+            for _, m in ipairs(vim.fn.globpath(v, '*.mp3', false, true)) do
                 table.insert(rst, m)
             end
         end
@@ -25,7 +25,7 @@ function M.play(m)
     job.stop(jobid)
     jobid = job.start({ 'ffplay', '-autoexit', '-nodisp', '-volume', '30', m }, {
         on_exit = function(id, code, signal)
-            logger.info(string.format('ffplay exit with code=%s, signal=%s', code, signal))
+            logger.info(string.format('ffplay(%s) exit with code=%s, signal=%s', id, code, signal))
             if code == 0 and signal == 0 then
                 local ms = M.get_musics()
                 M.play(ms[math.random(#ms)])
