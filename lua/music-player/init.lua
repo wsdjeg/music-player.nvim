@@ -32,7 +32,6 @@ function M.play(m)
             end
         end,
     })
-    job.chanclose(jobid, 'stderr')
 end
 
 function M.stop()
