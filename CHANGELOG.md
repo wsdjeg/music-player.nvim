@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/wsdjeg/music-player.nvim/compare/v1.0.0...v1.0.1) (2025-11-24)
+
+
+### Bug Fixes
+
+* support luarocks ([58d142e](https://github.com/wsdjeg/music-player.nvim/commit/58d142e989cdcfaf565a4aa984437f9d874539c8))
+
 ## 1.0.0 (2025-10-29)
 
 
