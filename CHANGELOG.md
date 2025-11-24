@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/wsdjeg/music-player.nvim/compare/v1.0.1...v1.0.2) (2025-11-24)
+
+
+### Bug Fixes
+
+* add license ([66006f8](https://github.com/wsdjeg/music-player.nvim/commit/66006f80027dc8bd69a9e11061398954ac2e80e3))
+
 ## [1.0.1](https://github.com/wsdjeg/music-player.nvim/compare/v1.0.0...v1.0.1) (2025-11-24)
 
 
